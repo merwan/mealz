@@ -1,4 +1,6 @@
 Mealz::Application.routes.draw do
+  resources :ingredients
+
   resources :recipes
 
   resources :units
