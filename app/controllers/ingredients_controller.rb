@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-  before_action :load_products, only: [:new, :edit]
+  before_action :load_products_and_units, only: [:new, :edit]
 
   # GET /ingredients
   # GET /ingredients.json
@@ -73,7 +73,8 @@ class IngredientsController < ApplicationController
     params.require(:ingredient).permit(:quantity, :unit_id, :product_id, :recipe_id)
   end
 
-  def load_products
+  def load_products_and_units
     @products = Product.all.collect { |p| [p.title, p.id] }
+    @units = Unit.all.collect { |p| [p.title, p.id] }
   end
 end
