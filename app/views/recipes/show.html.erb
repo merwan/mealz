@@ -16,6 +16,9 @@
     <li><%= ingredient %></li>
   <% end %>
 </ul>
+<p>
+  <%= link_to 'Add New Ingredient', new_ingredient_path(recipe_id: @recipe.id) %>
+</p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
