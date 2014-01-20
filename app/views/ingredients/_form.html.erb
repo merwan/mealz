@@ -13,16 +13,16 @@
 
   <%= f.hidden_field :recipe_id %>
   <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.select :product_id, @products %>
+  </div>
+  <div class="field">
     <%= f.label :quantity %><br>
     <%= f.text_field :quantity %>
   </div>
   <div class="field">
     <%= f.label :unit_id %><br>
     <%= f.number_field :unit_id %>
-  </div>
-  <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.number_field :product_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

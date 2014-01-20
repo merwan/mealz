@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+  before_action :load_products, only: [:new, :edit]
 
   # GET /ingredients
   # GET /ingredients.json
@@ -70,5 +71,9 @@ class IngredientsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def ingredient_params
     params.require(:ingredient).permit(:quantity, :unit_id, :product_id, :recipe_id)
+  end
+
+  def load_products
+    @products = Product.all.collect { |p| [p.title, p.id] }
   end
 end
