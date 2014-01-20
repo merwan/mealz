@@ -1,4 +1,6 @@
 Mealz::Application.routes.draw do
+  root 'recipes#index'
+
   resources :ingredients
 
   resources :recipes
