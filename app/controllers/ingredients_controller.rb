@@ -29,7 +29,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
+        format.html { redirect_to @ingredient.recipe, notice: 'Ingredient was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ingredient }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to @ingredient.recipe, notice: 'Ingredient was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
