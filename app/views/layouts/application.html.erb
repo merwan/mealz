@@ -12,8 +12,13 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
