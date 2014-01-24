@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
-  before_action :load_products_and_units, only: [:new, :edit]
+  before_action :load_products_and_units, only: [:new, :edit, :create]
 
   # GET /ingredients
   # GET /ingredients.json
