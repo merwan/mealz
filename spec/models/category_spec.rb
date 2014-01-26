@@ -19,4 +19,12 @@ describe Category do
     category.name = nil
     expect(category).not_to be_valid
   end
+
+  describe 'default_scope' do
+    it 'is ordered by name' do
+      category_1 = Category.create(name: 'qsd')
+      category_2 = Category.create(name: 'aze')
+      expect(Category.all).to eq([category_2, category_1])
+    end
+  end
 end
