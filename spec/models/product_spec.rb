@@ -19,4 +19,12 @@ describe Product do
   it 'belongs to a category' do
     expect(product).to respond_to(:category)
   end
+
+  describe 'default_scope' do
+    it 'is ordered by title' do
+      product_1 = Product.create(title: 'qsd', category_id: 1)
+      product_2 = Product.create(title: 'aze', category_id: 1)
+      expect(Product.all).to eq([product_2, product_1])
+    end
+  end
 end
