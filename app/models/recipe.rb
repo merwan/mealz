@@ -3,6 +3,7 @@ class Recipe < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
   validates :title, :description, presence: true
+  default_scope { order(:title) }
 
   def tag_list
     tags.join(', ')
