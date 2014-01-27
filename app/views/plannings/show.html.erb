@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @planning.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @planning.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_planning_path(@planning) %> |
+<%= link_to 'Back', plannings_path %>
