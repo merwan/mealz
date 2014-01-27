@@ -1,17 +1,18 @@
 require 'spec_helper'
 
 describe Recipe do
+  let(:recipe) { Recipe.new(title: 'nope', description: 'ok') }
   it 'is valid with a title' do
-    recipe = Recipe.new(title: 'nope', description: 'ok')
     expect(recipe).to be_valid
   end
 
   it 'is invalid without a title' do
-    expect(Recipe.new).not_to be_valid
+    recipe.title = nil
+    expect(recipe).not_to be_valid
   end
 
   it 'is invalid without a description' do
-    recipe = Recipe.new(title: 'Recipe title')
+    recipe.description = nil
     expect(recipe).not_to be_valid
   end
 
