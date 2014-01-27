@@ -1,18 +1,13 @@
 Mealz::Application.routes.draw do
-  resources :plannings
-
-  resources :categories
-
   root 'recipes#index'
 
+  resources :plannings
+  resources :meals
+  resources :categories
   resources :ingredients
-
   resources :recipes
-  
   resources :tags
-
   resources :units
-
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.

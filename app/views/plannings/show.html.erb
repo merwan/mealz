@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Start date:</strong>
   <%= @planning.start_date %>
@@ -8,6 +6,16 @@
 <p>
   <strong>End date:</strong>
   <%= @planning.end_date %>
+</p>
+
+<h2>Meals</h2>
+<ul>
+  <% @planning.meals.each do |meal| %>
+    <li><%= meal %></li>
+  <% end %>
+</ul>
+<p>
+  <%= link_to 'Add New Meal', new_meal_path(planning_id: @planning.id) %>
 </p>
 
 <%= link_to 'Edit', edit_planning_path(@planning) %> |
