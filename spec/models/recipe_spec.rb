@@ -16,6 +16,14 @@ describe Recipe do
     expect(recipe).not_to be_valid
   end
 
+  it 'has many meals' do
+    expect(recipe).to respond_to(:meals)
+  end
+
+  it 'belongs to many planning' do
+    expect(recipe).to respond_to(:plannings)
+  end
+
   describe 'default_scope' do
     it 'is ordered by title' do
       recipe_1 = Recipe.create(title: 'qsd', description: 1)

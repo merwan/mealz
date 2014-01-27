@@ -2,6 +2,8 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :meals
+  has_many :plannings, through: :meals
   validates :title, :description, presence: true
   default_scope { order(:title) }
 
