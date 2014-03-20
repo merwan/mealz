@@ -10,6 +10,7 @@ Mealz::Application.routes.draw do
   resources :units
   resources :products
 
+  match '/login' => redirect('/auth/developer'), as: :login,  via: :get
   post '/auth/:provider/callback', to: 'sessions#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
