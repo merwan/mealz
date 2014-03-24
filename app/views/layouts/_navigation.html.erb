@@ -20,10 +20,11 @@
           </li>
         <% else %>
           <li>
-            <%= link_to 'Login', login_path %>
+            <%= link_to 'Login', '#', data: { toggle: 'modal', target: '#loginForm' } %>
           </li>
         <% end %>
       </ul>
     </div>
   </div>
 </nav>
+<%= render 'layouts/login' %>
