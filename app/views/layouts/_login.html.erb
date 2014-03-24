@@ -1,69 +1,39 @@
 <div class="modal fade" id="loginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="container">
-        <div class="omb_login">
-          <h3 class="omb_authTitle">Login or <a href="#">Sign up</a></h3>
-          <div class="row omb_row-sm-offset-3 omb_socialButtons">
-            <div class="col-xs-4 col-sm-2">
-              <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-                <i class="fa fa-facebook visible-xs"></i>
-                <span class="hidden-xs">Facebook</span>
-              </a>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-              <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-                <i class="fa fa-twitter visible-xs"></i>
-                <span class="hidden-xs">Twitter</span>
-              </a>
-            </div>
-            <div class="col-xs-4 col-sm-2">
-              <a href="#" class="btn btn-lg btn-block omb_btn-google">
-                <i class="fa fa-google-plus visible-xs"></i>
-                <span class="hidden-xs">Google+</span>
-              </a>
-            </div>
-          </div>
 
-          <div class="row omb_row-sm-offset-3 omb_loginOr">
-            <div class="col-xs-12 col-sm-6">
-              <hr class="omb_hrOr">
-              <span class="omb_spanOr">or</span>
-            </div>
-          </div>
 
-          <div class="row omb_row-sm-offset-3">
-            <div class="col-xs-12 col-sm-6">
-              <form class="omb_loginForm" action="" autocomplete="off" method="POST">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="username" placeholder="email address">
-                </div>
-                <span class="help-block"></span>
+      <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
 
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input  type="password" class="form-control" name="password" placeholder="Password">
-                </div>
-                <span class="help-block">Password error</span>
+      <div class="text-center">
+        <form class="form-signin" data-ember-action="2">
+          <h2 class="form-signin-heading">Sign in</h2>
 
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-              </form>
-            </div>
-          </div>
-          <div class="row omb_row-sm-offset-3">
-            <div class="col-xs-12 col-sm-3">
-              <label class="checkbox">
-                <input type="checkbox" value="remember-me">Remember Me
-              </label>
-            </div>
-            <div class="col-xs-12 col-sm-3">
-              <p class="omb_forgotPwd">
-                <a href="#">Forgot password?</a>
-              </p>
-            </div>
-          </div>
-        </div>
+          <small class="text-muted">Connect Mealplanner with your favorite social network</small>
+          <br><br>
+
+
+          <p>
+            <a class="btn btn-primary social-login-btn social-facebook" href="/auth/facebook"><i class="fa fa-facebook"></i></a>
+            <a class="btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+          </p>
+          <p>
+            <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin"><i class="fa fa-linkedin"></i></a>
+            <a class="btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+          </p>
+
+          <small class="text-muted">Or sign in with Mealplanner</small>
+          <br><br>
+
+          <input id="ember360" class="ember-view ember-text-field form-control login-input" placeholder="Email Address" type="text">
+          <input id="ember361" class="ember-view ember-text-field form-control login-input-pass" placeholder="Password" type="password">
+
+          <script id="metamorph-22-start" type="text/x-placeholder"></script><script id="metamorph-22-end" type="text/x-placeholder"></script>
+
+          <button class="btn btn-lg btn-primary btn-block btn-center" type="submit" data-bindattr-3="3">Sign in</button>
+          <br>
+          <small class="create-account text-muted">Dont have a Mealplanner or social network account? <button id="ember363" class="ember-view btn btn-sm btn-default"> Sign Up </button> </small>
+        </form>
       </div>
     </div>
   </div>
