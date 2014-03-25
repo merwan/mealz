@@ -7,6 +7,7 @@ gem 'rails', '4.0.2'
 group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 
 group :production do
@@ -56,3 +57,4 @@ ruby '2.0.0'
 # gem 'debugger', group: [:development, :test]
 gem 'newrelic_rpm'
 gem 'omniauth'
+gem 'omniauth-google-oauth2'
