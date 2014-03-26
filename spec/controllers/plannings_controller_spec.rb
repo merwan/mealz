@@ -19,16 +19,17 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe PlanningsController do
+  let(:valid_user) { User.create! }
 
   # This should return the minimal set of attributes required to create a valid
   # Planning. As you add validations to Planning, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "start_date" => "2014-01-27" } }
+  let(:valid_attributes) { { "start_date" => "2014-01-27", user: valid_user } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # PlanningsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { { user_id: valid_user.id } }
 
   describe "GET index" do
     it "assigns all plannings as @plannings" do
