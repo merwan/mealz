@@ -1,5 +1,6 @@
 class PlanningsController < ApplicationController
   before_action :set_planning, only: [:show, :edit, :update, :destroy]
+  before_filter :require_login
 
   # GET /plannings
   # GET /plannings.json
@@ -62,13 +63,20 @@ class PlanningsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_planning
-      @planning = Planning.find(params[:id])
+  def require_login
+    unless current_user
+      redirect_to root_url
+      return false
     end
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def planning_params
-      params.require(:planning).permit(:start_date, :end_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_planning
+    @planning = Planning.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def planning_params
+    params.require(:planning).permit(:start_date, :end_date)
+  end
 end
