@@ -11,8 +11,9 @@ Mealz::Application.routes.draw do
   resources :products
 
   match '/login' => redirect('/auth/developer'), as: :login,  via: :get
-  match '/logout' => 'sessions#destroy', as: :logout,  via: :get
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  get '/auth/failure', to: 'sessions#failure'
+  match '/logout' => 'sessions#destroy', as: :logout,  via: :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
