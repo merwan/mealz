@@ -26,6 +26,7 @@ class PlanningsController < ApplicationController
   # POST /plannings.json
   def create
     @planning = Planning.new(planning_params)
+    @planning.user = current_user
 
     respond_to do |format|
       if @planning.save
